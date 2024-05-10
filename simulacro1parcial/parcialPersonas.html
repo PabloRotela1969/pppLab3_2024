@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <script src="funciones.js"></script>
+    <title>ABM PERSONAS</title>
+</head>
+
+    <body>
+        <div id="cabecera" class="formulario">
+    
+            <h1>Form Datos</h1>
+            <br>
+            <label>Filtrar por</label>
+            <select id="selector" class="custom-select" style="width:200px;" onchange="cargarGrillaYboton();">
+                <option value="1">Empleados</option>
+                <option value="2">Clientes</option>
+                <option value="3" selected>Todos</option>
+            </select>
+            <br>
+            <label>Calcular Edad Promedio:</label>
+            <input type="text" id="edadPromedio" class="input-text">
+            <button id="btnCalcular" onclick="recorrerVector()" class="boton">Calcular</button>
+            <br>
+            <label>Mostrar columnas:</label>
+            <br>
+            
+            <input type="checkbox" id="id" onchange="cargarGrillaYboton()" checked value="id">
+            <label for="id">id</label>
+            <input type="checkbox" id="nombre" onchange="cargarGrillaYboton()" checked  value="nombre">
+            <label for="nombre">nombre</label>
+            <input type="checkbox" id="apellido" onchange="cargarGrillaYboton()" checked value="apellido">
+            <label for="apellido">apellido</label>
+            <input type="checkbox" id="edad" onchange="cargarGrillaYboton()" checked  value="edad">
+            <label for="edad">edad</label>
+            <input type="checkbox" id="ventas" onchange="cargarGrillaYboton()" checked value="ventas">
+            <label for="ventas">ventas</label>
+            <input type="checkbox" id="sueldo" onchange="cargarGrillaYboton()" checked value="sueldo">
+            <label for="sueldo">sueldo</label>
+            <input type="checkbox" id="compras" onchange="cargarGrillaYboton()" checked value="compras">
+            <label for="compras">compras</label>
+            <input type="checkbox" id="telefono" onchange="cargarGrillaYboton()" checked value="telefono">
+            <label for="telefono">telefono</label>
+    
+        </div>
+
+        <div id="principal" class="grilla" >
+    
+            <table id="tablaPrincipal"  >
+
+        
+            </table>
+        </div>
+        
+        <div id="botonABM" >
+
+        </div>
+
+        <div id="seccionABM" class="field_container" style="display: none;">
+            <label>Formulario de ABM</label>
+            <br>
+            <label for="abm.id" >id:</label>
+            <input type="text" id="abm.id" class="input-text">
+            <input type="hidden" id="abm.fila">
+            <br>
+            <label for="abm.nombre" >nombre:</label>
+            <input type="text" id="abm.nombre" class="input-text">
+            <br>
+            <label for="abm.apellido" >apellido:</label>
+            <input type="text" id="abm.apellido" class="input-text">
+            <br>
+            <label for="abm.edad" >edad:</label>
+            <input type="text" id="abm.edad" class="input-text">
+            <br>
+            <label for="abm.ventas" >ventas:</label>
+            <input type="text" id="abm.ventas" class="input-text">
+            <br>
+            <label for="abm.sueldo" >sueldo:</label>
+            <input type="text" id="abm.sueldo" class="input-text">
+            <br>
+            <label for="abm.compras" >compras:</label>
+            <input type="text" id="abm.compras" class="input-text">
+            <br>
+            <label for="abm.telefono" >telefono:</label>
+            <input type="text" id="abm.telefono" class="input-text">
+            <br>
+            <button id="btnAlta" onclick="AgregarRegistroAVector()" class="boton">Alta</button>
+            <button id="btnBaja" onclick="BajaRegistroDeVector()" class="boton">Baja</button>
+            <button id="btnModificar" onclick="ModificarRegistroDeVector()" class="boton">Modificar</button>
+            <button id="btnLimpiar" onclick="LimpiarRegistroDeVector()" class="boton">Limpiar</button>
+            <button id="btnCancelar" onclick="mostrarSeccionPrincipal()" class="boton">Cancelar</button>
+        </div>
+            
+    </body>
+
+</html>
